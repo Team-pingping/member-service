@@ -32,6 +32,26 @@ spring:
     open-in-view: false
 
   security:
+    security:
+      oauth2:
+        client:
+          registration:
+            kakao:
+              client-id: '${kakao.client.id}'
+              client-secret: '${kakao.client.secret}'
+              client-authentication-method: client_secret_post
+              redirect-uri: '${kakao.redirect-url}'
+              authorization-grant-type: authorization_code
+              client-name: Kakao
+              scope:
+                - profile_nickname
+                - account_email
+          provider:
+            kakao:
+              authorization-uri: https://kauth.kakao.com/oauth/authorize
+              token-uri: https://kauth.kakao.com/oauth/token
+              user-info-uri: https://kapi.kakao.com/v2/user/me
+              user-name-attribute: id
     user:
       name: user
       password: password
