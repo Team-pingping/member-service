@@ -1,4 +1,4 @@
-package com.pingping.global.domain
+package com.pingping.global.entity
 
 import jakarta.persistence.EntityListeners
 import jakarta.persistence.MappedSuperclass
