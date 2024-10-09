@@ -82,6 +82,11 @@ dependencies {
 	testImplementation("io.mockk:mockk-agent-jvm:1.13.12")
 }
 
+allOpen {
+	annotation("jakarta.persistence.Entity")
+	annotation("jakarta.persistence.Embeddable")
+	annotation("jakarta.persistence.MappedSuperclass")
+}
 
 dependencyManagement {
 	imports {

@@ -59,6 +59,11 @@ spring:
   kafka:
     bootstrap-servers: ${KAFKA_CLUSTER_URL}
 
+jwt:
+  secret_key: ${jwt.secret_key}
+  access-token-validity-in-seconds: 30000
+  refresh-token-validity-in-seconds: 86400
+
 management:
   endpoints:
     web:
@@ -68,9 +73,6 @@ management:
     health:
       probes:
         enabled: true
-
-jwt:
-  secret: ${JWT_SECRET}
 
 logging:
   level:

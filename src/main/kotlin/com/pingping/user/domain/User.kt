@@ -1,12 +1,10 @@
 package com.pingping.user.domain
 
 import com.pingping.global.entity.BaseTimeEntity
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.EnumType
-import jakarta.persistence.Enumerated
+import jakarta.persistence.*
 
 @Entity
+@Table(name = "users")
 class User(
         @Column(nullable = false, updatable = false)
         val email: String,
@@ -14,10 +12,8 @@ class User(
         @Enumerated(EnumType.STRING)
         val role: Role,
 
-        @Column
         var nickName: String? = null,
 
-        @Column
         var age: Int? = null,
 
         @Enumerated(EnumType.STRING)
@@ -30,4 +26,16 @@ class User(
             age = null,
             gender = null
     )
+
+    companion object {
+        fun createFirstLoginUser(email: String): User {
+            return User(
+                    email = email,
+                    role = Role.USER,
+                    nickName = null,
+                    age = null,
+                    gender = null
+            )
+        }
+    }
 }
