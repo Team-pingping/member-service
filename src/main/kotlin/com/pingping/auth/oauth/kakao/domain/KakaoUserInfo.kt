@@ -1,8 +1,5 @@
 package com.pingping.auth.oauth.kakao.domain
 
-import com.fasterxml.jackson.core.type.TypeReference
-import com.fasterxml.jackson.databind.ObjectMapper
-
 class KakaoUserInfo(
         private val attributes: Map<String, Any>
 ) {

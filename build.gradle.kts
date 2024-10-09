@@ -34,7 +34,9 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-security")
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
 	implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.0")
-	implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
+
+	// logger
+	implementation("io.github.oshai:kotlin-logging-jvm:7.0.0")
 
 	// Spring Kafka
 	implementation("org.springframework.kafka:spring-kafka")
