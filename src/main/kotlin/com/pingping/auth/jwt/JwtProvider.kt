@@ -1,5 +1,6 @@
-package com.pingping.auth.jwt.token
+package com.pingping.auth.jwt
 
+import com.pingping.auth.jwt.JwtConst.TOKEN_ISSUER
 import com.pingping.global.exception.CustomException
 import com.pingping.global.exception.ExceptionContent
 import com.pingping.user.domain.repository.UserRepository
@@ -20,10 +21,8 @@ import java.util.*
 
 private val log = KotlinLogging.logger {}
 
-const val TOKEN_ISSUER = "PING_PING"
-
 @Component
-class TokenProvider(
+class JwtProvider(
         private val redisTemplate: RedisTemplate<String, String>,
         private val userRepository: UserRepository,
         @Value("\${jwt.secret_key}") private val base64Secret: String,
@@ -194,5 +193,4 @@ class TokenProvider(
 
         return UsernamePasswordAuthenticationToken(principal, token, authorities)
     }
-
 }

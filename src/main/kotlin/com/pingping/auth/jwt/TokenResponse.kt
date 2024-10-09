@@ -1,4 +1,4 @@
-package com.pingping.auth.jwt.token
+package com.pingping.auth.jwt
 
 data class TokenResponse(
         val accessToken: String,
